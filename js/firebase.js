@@ -1,14 +1,14 @@
 // Firebase Configuration (Placeholders)
 // NOTE: Replace these values with your actual Firebase project configuration
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyAy24bhSoGwGCmZuvpqjvZrR9USS0eN2w0",
+  authDomain: "elibase-bookstore.firebaseapp.com",
+  projectId: "elibase-bookstore",
+  storageBucket: "elibase-bookstore.firebasestorage.app",
+  messagingSenderId: "345796389174",
+  appId: "1:345796389174:web:fe6fb0aed2dff2f1d7eb97",
+  measurementId: "G-7J4W76GZQC"
 };
-
 // Initialize Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
