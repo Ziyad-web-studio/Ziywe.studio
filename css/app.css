@@ -1,0 +1,202 @@
+:root {
+  /* Color Palette - Day Mode */
+  --bg-color: #F2F2F7; /* Apple System Gray 6 */
+  --card-bg: #FFFFFF;
+  --text-primary: #000000;
+  --text-secondary: #8E8E93;
+  --accent-color: #007AFF; /* Apple Blue */
+  --divider-color: #C6C6C8;
+  --input-bg: #E5E5EA; /* Apple System Gray 5 */
+
+  /* Dimensions */
+  --radius-l: 32px;
+  --radius-m: 20px;
+  --radius-s: 12px;
+
+  /* Transitions */
+  --transition-smooth: all 0.4s ease-out;
+}
+
+/* Night Mode Override */
+body.night-mode {
+  --bg-color: #1C1C1E; /* Dark Charcoal */
+  --card-bg: #2C2C2E;
+  --text-primary: #FFFFFF;
+  --text-secondary: #8E8E93;
+  --accent-color: #0A84FF; /* Apple Dark Mode Blue */
+  --divider-color: #38383A;
+  --input-bg: #3A3A3C;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  transition: background-color 0.5s ease;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 480px; /* Mobile focused width */
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Typography */
+h1 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* Buttons */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--radius-m);
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  margin-bottom: 16px;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: #FFFFFF;
+}
+
+.btn-primary:active {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+
+.btn-secondary {
+  background-color: var(--input-bg);
+  color: var(--accent-color);
+}
+
+.btn-secondary:active {
+  background-color: var(--divider-color);
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--radius-m);
+  border: 1px solid transparent;
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 17px;
+  margin-bottom: 16px;
+  transition: var(--transition-smooth);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  background-color: var(--card-bg);
+}
+
+/* Cards / Glassmorphism */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius-l);
+  padding: 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Helper Text */
+.helper-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Chat Interface (Onboarding) */
+.chat-bubble {
+  padding: 12px 16px;
+  border-radius: var(--radius-m);
+  margin-bottom: 12px;
+  max-width: 80%;
+  animation: slideIn 0.3s ease-out;
+}
+
+.chat-bubble.bot {
+  background-color: var(--input-bg);
+  color: var(--text-primary);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-bubble.user {
+  background-color: var(--accent-color);
+  color: #FFFFFF;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  margin-left: auto;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Utilities */
+.hidden {
+  display: none !important;
+}
+
+.center-content {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+/* QR Placeholder */
+.qr-helper {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-m);
+  border: 1px dashed var(--divider-color);
+}

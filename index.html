@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tenangin</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="container center-content">
+    <h1>Tenangin</h1>
+    <p>Asisten empatik untuk usaha Anda.</p>
+
+    <div style="margin-top: 40px; width: 100%;">
+      <a href="login.html" class="btn btn-primary">Mulai</a>
+      <a href="#" class="btn btn-secondary">Download Android</a>
+    </div>
+
+    <!-- PC Helper Text (Hidden by default) -->
+    <div id="pc-helper" class="qr-helper hidden">
+      <p style="margin: 0; font-size: 14px;">
+        Bisa login langsung, atau scan QR dari HP jika akun sudah ada.
+      </p>
+    </div>
+  </div>
+
+  <script type="module">
+    import "./js/auth.js"; // Import auth to trigger redirect if already logged in
+
+    // Check if user is on PC (Simple width check for now)
+    if (window.innerWidth > 768) {
+      document.getElementById('pc-helper').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>

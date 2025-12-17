@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Tenangin</title>
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <div class="container" id="app-container">
+    <!-- Onboarding Section (Initially Hidden) -->
+    <div id="onboarding-section" class="hidden" style="height: 100%; display: flex; flex-direction: column;">
+      <h2>Halo! Kenalan dulu yuk.</h2>
+      <div id="chat-container" style="flex: 1; overflow-y: auto; padding-bottom: 20px;">
+        <!-- Chat bubbles will appear here -->
+      </div>
+
+      <div style="margin-top: auto;">
+        <input type="text" id="chat-input" placeholder="Ketik di sini..." autocomplete="off">
+        <button id="chat-send" class="btn btn-primary">Kirim</button>
+      </div>
+    </div>
+
+    <!-- Dashboard Section (Initially Hidden) -->
+    <div id="dashboard-section" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h1 id="greeting">Selamat Pagi</h1>
+        <button id="logout-btn" style="background: none; border: none; color: var(--accent-color); font-size: 16px; cursor: pointer;">Keluar</button>
+      </div>
+
+      <div class="card">
+        <h3 style="margin-top: 0;">Status Toko</h3>
+        <p id="store-name-display">Memuat...</p>
+        <p id="store-type-display" style="font-size: 14px; color: var(--text-secondary);"></p>
+      </div>
+
+      <div class="card" style="margin-top: 20px;">
+        <p>Menu lainnya akan segera hadir.</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/auth.js"></script>
+  <script type="module" src="js/onboarding.js"></script>
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
