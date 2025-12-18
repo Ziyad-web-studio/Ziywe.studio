@@ -1,70 +1,238 @@
 <!DOCTYPE html>
-<html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Tenangin</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nameless Serve | The Only Serve Coffee and Dark</title>
+    <meta name="description" content="Nameless Serve Coffee - A quiet, dark, and minimal specialty coffee experience.">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-            },
-            colors: {
-              appleBlue: '#007AFF',
-              successGreen: '#34C759',
-              darkCharcoal: '#1C1C1E',
-              offWhite: '#F2F2F7',
-              glassLight: 'rgba(255, 255, 255, 0.7)',
-              glassDark: 'rgba(28, 28, 30, 0.7)',
-            },
-            boxShadow: {
-              'apple': '0 4px 24px rgba(0, 0, 0, 0.08)',
-              'apple-hover': '0 8px 32px rgba(0, 0, 0, 0.12)',
-            }
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        background-color: #F2F2F7;
-        color: #000;
-        transition: background-color 0.5s ease;
-      }
-      body.dark {
-        background-color: #000;
-        color: #FFF;
-      }
-      /* Hide scrollbar for clean UI */
-      ::-webkit-scrollbar {
-        width: 0px;
-        background: transparent;
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "firebase/": "https://esm.sh/firebase@^12.6.0/",
-    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "react": "https://esm.sh/react@^19.2.3"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-  <body>
-    <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">Nameless Serve</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#menu">Menu</a>
+                <a href="#experience">Experience</a>
+                <a href="#location">Location</a>
+                <a href="https://linktr.ee/nameless.serve" target="_blank" class="cta-small">Order Online</a>
+            </div>
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content fade-in">
+            <h1>Nameless Serve</h1>
+            <p class="slogan">The Only Serve Coffee and Dark.</p>
+            <div class="hero-text">
+                <p>Quiet moments. Craftsmanship. Consistency.</p>
+            </div>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">View Menu</a>
+                <a href="#location" class="btn btn-outline">Find Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>About Us</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text fade-in">
+                    <p>Hidden inside a quiet residential area, Nameless Serve is more than just a coffee shop. It is a sanctuary for those who seek calm.</p>
+                    <p>Our minimalist architecture and warm, dim lighting create an atmosphere that feels luxurious yet relaxed—a "hidden gem" for creatives, remote workers, and coffee enthusiasts.</p>
+                    <p>We believe in consistency. From our signature XOXO coffee to our clean service, every detail is curated to provide a peaceful escape from the noise.</p>
+                </div>
+                <!-- Placeholder for Image -->
+                <div class="about-image fade-in">
+                    <div class="image-placeholder"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="section menu">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Menu</h2>
+                <p>Curated selection of specialty drinks.</p>
+            </div>
+
+            <div class="menu-grid">
+                <!-- Signature Coffee -->
+                <div class="menu-category fade-in">
+                    <h3>Signature Coffee</h3>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <div class="menu-info">
+                                <span class="name">Ice Coffee XOXO</span>
+                                <span class="desc">Espresso, fresh milk, palm sugar</span>
+                            </div>
+                            <span class="price">25k</span>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-info">
+                                <span class="name">XOXO Strong</span>
+                                <span class="desc">Double espresso for strong coffee lovers</span>
+                            </div>
+                            <span class="price">30k</span>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-info">
+                                <span class="name">Ice Coffee Breeze</span>
+                                <span class="desc">Espresso, vanilla, lemon, soda</span>
+                            </div>
+                            <span class="price">28k</span>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-info">
+                                <span class="name">Black Summer</span>
+                                <span class="desc">Espresso with lemon extract</span>
+                            </div>
+                            <span class="price">25k</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Non-Coffee -->
+                <div class="menu-category fade-in">
+                    <h3>Non-Coffee</h3>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <div class="menu-info">
+                                <span class="name">Shoegaze</span>
+                                <span class="desc">Orange candy flavor with milk</span>
+                            </div>
+                            <span class="price">25k</span>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-info">
+                                <span class="name">Signature Chocolate</span>
+                                <span class="desc">House chocolate with fresh milk</span>
+                            </div>
+                            <span class="price">28k</span>
+                        </li>
+                        <li class="menu-item">
+                            <div class="menu-info">
+                                <span class="name">Matcha / Taro</span>
+                                <span class="desc">Japanese green tea or taro</span>
+                            </div>
+                            <span class="price">28k</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Bottled Series -->
+                <div class="menu-category fade-in">
+                    <h3>1 Liter Series</h3>
+                    <ul class="menu-list">
+                        <li class="menu-item">
+                            <div class="menu-info">
+                                <span class="name">XOXO / Matcha / Chocolate</span>
+                                <span class="desc">Ready to serve at home</span>
+                            </div>
+                            <span class="price">90k - 95k</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>The Experience</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <h3>Atmosphere</h3>
+                    <p>Cozy, calm, and aesthetic environment with romantic warm lighting at night.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <h3>Location</h3>
+                    <p>A hidden gem in a peaceful residential area. Clean toilets and parking available.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <h3>Work Friendly</h3>
+                    <p>Stable Wi-Fi and power outlets make it ideal for WFH or study sessions.</p>
+                </div>
+                <div class="feature-card fade-in">
+                    <h3>Service</h3>
+                    <p>Friendly, fast baristas and neat packaging for every order.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="section location">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Visit Us</h2>
+            </div>
+            <div class="location-content">
+                <div class="location-info fade-in">
+                    <div class="info-block">
+                        <h3>Address</h3>
+                        <p>Jl. Riung Arum Barat X No.180, RT.004/RW.013,<br>Cisaranten Kidul, Kec. Gedebage,<br>Kota Bandung, Jawa Barat 40294</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>Hours</h3>
+                        <p>Mon – Thu: 12:00 – 22:00<br>Fri – Sun: 13:00 – 23:00</p>
+                    </div>
+                    <div class="info-block">
+                        <h3>Contact</h3>
+                        <p><a href="https://wa.me/6282245434412" target="_blank">WhatsApp: +62 822-4543-4412</a></p>
+                    </div>
+                    <div class="services-list">
+                        <span>Dine-in</span> • <span>Takeaway</span> • <span>GoFood</span> • <span>Wifi</span> • <span>Outdoor</span>
+                    </div>
+                </div>
+                <div class="map-container fade-in">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.6726671077755!2d107.6834513!3d-6.9365922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68c30030172605%3A0xc300000000000000!2sNameless%20Serve!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>Nameless Serve</h3>
+                <p>The Only Serve Coffee and Dark.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://linktr.ee/nameless.serve" target="_blank">Linktree</a>
+                <a href="#menu">Menu</a>
+                <a href="#location">Location</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Nameless Serve. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>

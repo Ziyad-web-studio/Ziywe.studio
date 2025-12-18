@@ -1,20 +1,34 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Nameless Serve
 
-# Run and deploy your AI Studio app
+**The Only Serve Coffee and Dark.**
 
-This contains everything you need to run your app locally.
+A minimalist, atmospheric website for a specialty coffee brand.
 
-View your app in AI Studio: https://ai.studio/apps/drive/14eLVP7Kd22JJ9GSxS3Wpzp6_-OHhhNhM
+## Features
 
-## Run Locally
+-   **Atmospheric Design:** Dark theme, warm accents, and smooth animations.
+-   **Single Page Application:** Seamless navigation between sections.
+-   **Responsive:** Fully optimized for mobile and desktop.
+-   **Performance:** Lightweight HTML/CSS/JS implementation.
 
-**Prerequisites:**  Node.js
+## Tech Stack
 
+-   HTML5
+-   CSS3 (Variables, Flexbox, Grid)
+-   Vanilla JavaScript
+-   Google Fonts (Inter)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Development
+
+To run the site locally:
+
+1.  Clone the repository.
+2.  Open `index.html` in your browser, or use a simple HTTP server:
+    ```bash
+    python3 -m http.server
+    ```
+3.  Navigate to `http://localhost:8000`.
+
+## License
+
+All rights reserved.
