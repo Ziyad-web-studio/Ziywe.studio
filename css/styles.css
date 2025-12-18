@@ -1,20 +1,20 @@
 :root {
     /* Color System */
-    --bg-color: #F5F5F7; /* Apple Off-white */
-    --bg-white: #FFFFFF;
-    --bg-dark: #1D1D1F; /* Apple Black */
+    --bg-color: #111111; /* Dark Charcoal */
+    --bg-white: #1c1c1c; /* Dark Grey for cards */
+    --bg-dark: #000000; /* Pure Black */
 
-    --text-primary: #1D1D1F;
-    --text-secondary: #86868B;
-    --text-white: #F5F5F7;
+    --text-primary: #E0E0E0; /* Off-white */
+    --text-secondary: #A0A0A0; /* Light Grey */
+    --text-white: #FFFFFF;
 
-    --accent-color: #D1A67B; /* Warm Amber */
-    --accent-hover: #B58A5F;
+    --accent-color: #D4AF37; /* Muted Gold */
+    --accent-hover: #C5A028;
 
-    --btn-primary-bg: #1D1D1F;
-    --btn-primary-text: #FFFFFF;
-    --btn-secondary-bg: #FFFFFF;
-    --btn-secondary-text: #0071E3; /* Apple Blue for link buttons */
+    --btn-primary-bg: #D4AF37;
+    --btn-primary-text: #111111;
+    --btn-secondary-bg: transparent;
+    --btn-secondary-text: #D4AF37;
 
     /* Layout */
     --container-max: 980px; /* Apple uses narrow container for text */
@@ -27,8 +27,8 @@
     /* UI */
     --radius-pill: 980px;
     --radius-card: 28px;
-    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.04);
-    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.08);
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.7);
 
     /* Typography */
     --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -58,7 +58,7 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease, color 0.2s ease;
 }
 
 ul {
@@ -96,6 +96,7 @@ ul {
     letter-spacing: -0.01em;
     line-height: 1.1;
     margin-bottom: 0.5rem;
+    color: var(--text-white);
 }
 
 .typography-subhead {
@@ -112,6 +113,7 @@ ul {
     letter-spacing: -0.02em;
     line-height: 1.1;
     margin-bottom: 1.5rem;
+    color: var(--text-white);
 }
 
 .typography-headline-small {
@@ -119,6 +121,7 @@ ul {
     font-weight: 600;
     letter-spacing: -0.01em;
     margin-bottom: 1rem;
+    color: var(--text-white);
 }
 
 .typography-body {
@@ -141,12 +144,14 @@ ul {
     font-size: 3rem;
     font-weight: 600;
     margin-bottom: 3rem;
+    color: var(--text-white);
 }
 
 .typography-product-name {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
+    color: var(--text-white);
 }
 
 .typography-product-desc {
@@ -168,8 +173,8 @@ ul {
     top: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-    background-color: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background-color: rgba(17, 17, 17, 0.8);
 }
 
 .frosted-glass {
@@ -188,7 +193,7 @@ ul {
     font-weight: 600;
     font-size: 1.1rem;
     letter-spacing: -0.01em;
-    color: var(--text-primary);
+    color: var(--text-white);
 }
 
 .nav-links {
@@ -199,7 +204,7 @@ ul {
 
 .nav-links a {
     font-size: 0.8rem;
-    color: var(--text-primary);
+    color: var(--text-secondary);
     font-weight: 400;
 }
 
@@ -209,10 +214,11 @@ ul {
 
 .nav-btn {
     background-color: var(--btn-primary-bg);
-    color: white !important;
+    color: var(--btn-primary-text) !important;
     padding: 6px 14px;
     border-radius: var(--radius-pill);
     font-size: 0.75rem !important;
+    font-weight: 600 !important;
 }
 
 /* UI Components */
@@ -223,7 +229,8 @@ ul {
     padding: 12px 28px;
     font-size: 1.05rem;
     font-weight: 500;
-    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background-color 0.2s;
+    cursor: pointer;
 }
 
 .btn:active {
@@ -236,17 +243,20 @@ ul {
 
 .btn-primary {
     background-color: var(--btn-primary-bg);
-    color: white;
+    color: var(--btn-primary-text);
+}
+.btn-primary:hover {
+    background-color: var(--accent-hover);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--btn-primary-bg); /* Use black for text */
-    border: 1px solid var(--btn-primary-bg); /* Add border for visibility */
+    color: var(--btn-secondary-text);
+    border: 1px solid var(--btn-secondary-text);
     margin-left: 10px;
 }
 .btn-secondary:hover {
-    background-color: rgba(0,0,0,0.05);
+    background-color: rgba(212, 175, 55, 0.1);
 }
 
 .card-rounded {
@@ -281,9 +291,9 @@ ul {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, #E8E8ED, #D2D2D7);
-    box-shadow: inset 10px 10px 20px rgba(255,255,255,0.8),
-                inset -10px -10px 20px rgba(0,0,0,0.1);
+    background: radial-gradient(circle at 30% 30%, #333333, #000000);
+    box-shadow: inset 10px 10px 20px rgba(255,255,255,0.1),
+                inset -10px -10px 20px rgba(0,0,0,0.5);
 }
 
 /* Products */
@@ -307,7 +317,7 @@ ul {
 
 .price {
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--accent-color);
     margin-top: 10px;
 }
 
@@ -323,15 +333,19 @@ ul {
 .visual-placeholder {
     width: 200px;
     height: 250px;
-    background-color: #F0F0F0;
+    background-color: #2a2a2a;
     border-radius: 20px;
     position: relative;
 }
-.xoxo-visual { background: linear-gradient(135deg, #e3dac9 0%, #d4c5b0 100%); }
-.black-summer-visual { background: linear-gradient(135deg, #333 0%, #1a1a1a 100%); }
+.xoxo-visual { background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%); border: 1px solid #333; }
+.black-summer-visual { background: linear-gradient(135deg, #111 0%, #000 100%); border: 1px solid #333; }
 
 
 /* Pro Series */
+.pro-series {
+    background-color: var(--bg-dark);
+}
+
 .pro-grid {
     display: flex;
     justify-content: center;
@@ -359,12 +373,12 @@ ul {
 .pro-divider {
     width: 1px;
     height: 50px;
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.1);
 }
 
 /* Menu */
 .menu-list {
-    background: white;
+    background: var(--bg-white);
     padding: 40px;
     border-radius: var(--radius-card);
     box-shadow: var(--shadow-soft);
@@ -380,7 +394,7 @@ ul {
     display: flex;
     justify-content: space-between;
     padding: 16px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 
 .menu-row span:first-child {
@@ -399,8 +413,8 @@ ul {
 /* Atmosphere */
 .atmosphere-visual {
     height: 600px;
-    background-color: #DDD;
-    background-image: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'); /* Placeholder Coffee Shop Image */
+    background-color: #222;
+    background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80'); /* Darker Coffee Image */
     background-size: cover;
     background-position: center;
     display: flex;
@@ -408,12 +422,20 @@ ul {
     justify-content: center;
     position: relative;
 }
+/* Overlay for better text readability */
+.atmosphere-visual::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+}
 
 .caption-overlay {
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.6);
     padding: 20px 40px;
     border-radius: var(--radius-pill);
     backdrop-filter: blur(10px);
+    z-index: 1;
 }
 
 /* Location */
@@ -448,7 +470,7 @@ address {
 
 .link-arrow {
     font-weight: 500;
-    color: #0071E3; /* Apple Link Blue */
+    color: var(--accent-color);
     font-size: 1.1rem;
 }
 
@@ -460,13 +482,13 @@ address {
     width: 100%;
     height: 100%;
     border: 0;
-    /* Clean map style, no filter needed for light mode */
+    filter: invert(90%) hue-rotate(180deg); /* Dark mode map */
 }
 
 /* Copyright */
 .copyright {
     font-size: 0.8rem;
-    color: #999;
+    color: #555;
 }
 
 /* Animations */
