@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Smooth Scrolling
+    // 1. Smooth Scrolling for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -8,11 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
-                // Close mobile menu if open
-                document.querySelector('.nav-links').classList.remove('active');
-
-                // Scroll with offset for header
-                const headerOffset = 80;
+                const headerOffset = 60; // Adjust for fixed nav
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
@@ -24,33 +20,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Scroll Animation (Intersection Observer)
+    // 2. Intersection Observer for "Apple-style" Scroll Animations
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.1
+        threshold: 0.15 // Trigger when 15% visible
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Only animate once
+                observer.unobserve(entry.target); // Animate once
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('.fade-in').forEach(el => {
+    // Target elements with .fade-in-scroll class
+    document.querySelectorAll('.fade-in-scroll').forEach(el => {
         observer.observe(el);
     });
 
-    // 3. Mobile Menu Toggle
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (mobileToggle) {
-        mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+    // 3. Simple Parallax for Hero Circle (Micro-interaction)
+    const circle = document.querySelector('.abstract-circle');
+    if (circle) {
+        window.addEventListener('scroll', () => {
+            const scroll = window.scrollY;
+            if (scroll < 800) {
+                circle.style.transform = `translateY(${scroll * 0.2}px)`;
+            }
         });
     }
 });
